@@ -30,10 +30,13 @@ const todos = [
 ];
 
 class App extends React.Component {
-
-  state = {
-    todoList: todos,
-  };
+  // Constructor with state
+  constructor() {
+    super();
+    this.state = {
+      todoList: todos,
+    };
+  }
   
   // I can add new objects even though it's not on the array
   addNewTodo = newTodoTask => {
