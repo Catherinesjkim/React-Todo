@@ -37,7 +37,7 @@ class TodoForm extends React.Component {
             task='todo' 
             value={this.state.newTodo}
           />
-        <button>Add Button</button>
+        <button>Add Button </button> <br/>
         </form>
         <button 
           className="clear-btn" 
