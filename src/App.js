@@ -82,7 +82,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <div className="header">
-          <h2>Todo List: MVP</h2>
+          <h2>My First Todo App Ever!</h2>
           <TodoForm addNewTodo={this.addNewTodo} clearCompleted={this.clearCompleted}/>
         </div>
           <TodoList 
