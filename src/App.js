@@ -31,17 +31,21 @@ const todos = [
 
 class App extends React.Component {
   // Constructor with state
-  constructor() {
-    super();
-    this.state = {
-      todoList: todos,
+    state = {
+      todoList: todos
     };
-  }
   
   // I can add new objects even though it's not on the array
   addNewTodo = newTodoTask => {
-    const newState = { ...this.state, todoList: 
-    [...this.state.todoList, {task: newTodoTask, completed: false, id: Date.now() }
+    const newState = { 
+      ...this.state, 
+      todoList: [
+        ...this.state.todoList, 
+        {
+          task: newTodoTask, 
+          completed: false, 
+          id: Date.now()
+        }
     ]
   };
   this.setState(newState);
@@ -78,17 +82,16 @@ class App extends React.Component {
   };
 
   render() {
-    console.log("rendering...");
     return (
       <div className="App">
         <div className="header">
-          <h2>My First Todo App Ever!</h2>
-          <TodoForm addNewTodo={this.addNewTodo} clearCompleted={this.clearCompleted}/>
+          <h2>Todo App</h2>
+          <TodoForm addNewTodo={this.addNewTodo} clearCompleted={this.clearCompleted} />
         </div>
-          <TodoList 
-            todos={this.state.todoList} 
-            toggleCompleted={this.toggleCompleted}
-          />
+        <TodoList
+          todos={this.state.todoList}
+          toggleCompleted={this.toggleCompleted}
+        />
       </div>
     );
   }

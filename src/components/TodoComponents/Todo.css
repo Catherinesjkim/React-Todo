@@ -98,3 +98,11 @@ li {
   background-color: gray;
   text-decoration: line-through;
 }
+
+.formGoLeft {
+  width: 50%;
+  margin: 0 auto;
+  padding-bottom: 2%;
+  margin-top: 5%;
+  border-radius: 5%;
+}

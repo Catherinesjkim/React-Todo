@@ -6,12 +6,9 @@ class TodoForm extends React.Component {
   // 1. Implement a state variable for the input component
   // 2. Update the input component with the state variable
   // 3. Implement handleChanges to recognize typing in the input component
-  constructor () {
-    super();
-    this.state = {
-      newTodo: ''
+  state = {
+    newTodo: ''
     };
-  }
 
   handleChanges = event => {
     // updated state with each keystroke
@@ -33,18 +30,19 @@ class TodoForm extends React.Component {
           {/* This is an uncontrolled component. We want it to be controlled*/}
           <input 
             onChange={this.handleChanges}
-            type='text' 
+            type='text'
+            name='task'
             task='todo' 
             value={this.state.newTodo}
           />
-        <button>Add Button </button> <br/>
+          <button>Add Button </button> <br/>
+          <button 
+            className="clear-btn" 
+            onClick={this.props.clearCompleted}
+          >
+            Clear Completed
+          </button>
         </form>
-        <button 
-          className="clear-btn" 
-          onClick={this.props.clearCompleted}
-        >
-          Clear Completed
-        </button>
       </div>
     );
   }

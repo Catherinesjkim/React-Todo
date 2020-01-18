@@ -1,22 +1,28 @@
 // Add "Search by Todo Item" feature
 // Add the <TodoSearch /> component 
 // Create a search form that will filter through the todo items displayed in the todo list
+import React from 'react';
 
-// class 
+function TodoSearch({ handleChange, searchTerm }) {
 
-// return (
-//   <section className="todo-search">
-//     <form>
-//       <label htmlFor="title">Search:</label>
-//       <input 
-//         id="todo" 
-//         type="text" 
-//         name="todo" 
-//         onChange={handleChange}
-//         value={serarchTerm}
-//       />
-//     </form>
-//     {searchResults.map(todo => (
-//       <TodoForm
-//     ))}
-//   </section>
+  return (
+    <div className="todo-search">
+      <form>
+        <label htmlFor="title">Search:</label>
+        <input 
+          id="todo" 
+          type="text" 
+          name="task" 
+          onChange={handleChange}
+          value={searchTerm}
+          placeholder='Search Tasks'
+          className='searchInput'
+        />
+        <button>Search</button>
+        
+      </form>
+    </div>
+  )
+};
+
+export default TodoSearch;
