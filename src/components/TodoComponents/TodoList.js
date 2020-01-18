@@ -5,17 +5,24 @@ import Todo from './Todo';
 import TodoSearch from "./TodoSearch";
 
 const TodoList = ({ todos, toggleCompleted }) => {
+
   const [searchTerm, setSearchTerm] = useState("");
-  
   const [searchResults, setSearchResults] = useState(todos);
 
   useEffect(() => {
-    const results = searchResults.filter(character => {
-      return character.task.toLowerCase().includes(searchTerm.toLowerCase());
+
+    const results = todos.filter(character => {
+      console.log('cat', searchResults);
+      return character.task
+        .toLowerCase()
+        .includes(searchTerm.toLowerCase());
     });
+
     setSearchResults(results);
+    console.log(searchTerm);
     //eslint-disable-next-line
   }, [searchTerm]);
+  console.log(searchResults);
 
   const handleChange = event => {
     setSearchTerm(event.target.value);
