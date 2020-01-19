@@ -8,7 +8,6 @@ function TodoSearch({ handleChange, searchTerm }) {
   return (
     <div className="todo-search">
       <form>
-        <label htmlFor="title">Search:</label>
         <input 
           id="todo" 
           type="text" 
@@ -18,8 +17,6 @@ function TodoSearch({ handleChange, searchTerm }) {
           placeholder='Search Tasks'
           className='searchInput'
         />
-        <button>Search</button>
-        
       </form>
     </div>
   )

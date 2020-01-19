@@ -29,6 +29,7 @@ class TodoForm extends React.Component {
         <form onSubmit={this.handleSubmit}>
           {/* This is an uncontrolled component. We want it to be controlled*/}
           <input 
+            required
             onChange={this.handleChanges}
             type='text'
             name='task'
